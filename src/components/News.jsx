@@ -27,11 +27,11 @@ const News = ({ simplified }) => {
             className='selectNews'
             placeholder='Select a Crypto'
             optionFilterProp='children'
-            onChange={(value) => console.log(value)}
+            onChange={(value) => setnewsCategory(value)}
             filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
           >
             <Option value='Crytocurrency'>Crytocurrency</Option>
-
+            {data?.data?.coins.map((coin) => <Option value={coin.name}>{coin.name}</Option>)}
           </Select>
         </Col>
       )}
